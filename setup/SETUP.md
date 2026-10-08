@@ -20,6 +20,8 @@ Supported on macOS and Linux. On Windows, tell the user this template is unteste
 
 - **If `~/second-brain` already exists and is not empty**, ask the user whether to use another folder name.
 
+**The commands below use `~/second-brain`.** Substitute the real folder if it differs.
+
 **If git is missing on macOS**, running `git` opens a system prompt to install developer tools. Tell the user to click Install, wait for it to finish, then say "continue".
 
 ## 2. Detach it from the template
