@@ -10,7 +10,8 @@ It is also an Obsidian vault. Everything here must remain plain markdown.
 INDEX.md    # the map: one line per note, always current
 notes/      # one file per topic
 inbox/      # quick, unorganized captures awaiting promotion to notes/
-setup/      # installer files, not notes
+setup/      # Claude Code installer files, not notes
+cowork/     # Cowork plugin and instructions, not notes
 ```
 
 ## Note format

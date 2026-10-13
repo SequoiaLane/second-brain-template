@@ -1,0 +1,3 @@
+A folder named second-brain is attached to this project. It holds distilled notes from my past Claude conversations: decisions, open threads, and reasoning worth resuming. INDEX.md there lists each topic on one line. Full notes live in notes/.
+
+Read INDEX.md when the current work may already have prior thinking behind it, or when I refer to an earlier discussion. Don't read it for tasks that clearly stand alone. The recall skill does this lookup properly, and the capture skill saves new thinking back. When a conversation reaches a natural stopping point on a topic worth keeping, offer to capture it.

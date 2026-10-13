@@ -52,15 +52,24 @@ setup/install.py
 |---|---|---|
 | **Claude Code on your machine** | Yes | The CLI, desktop Code tab, and IDE extensions all read `~/.claude`. |
 | **Claude Code cloud sessions** | No | Cloud sessions do not read your user-level skills or settings. |
-| **Cowork** | No, as built | Cowork does not read the CLI's `~/.claude` folder. |
+| **Cowork** | With extra steps | Cowork does not read `~/.claude`. Upload the Cowork plugin and attach the folder. |
 | **claude.ai chat** | No | Chat has no access to your files or git. |
 
-**Cowork can use the brain with extra setup.**
+**Cowork uses a separate plugin.** The README has the user steps. The sources are in the repo:
 
-- **Grant the folder.** Attach the brain folder to a Cowork project.
-- **Add the instruction.** Paste the hook's text into the project's instructions.
-- **Install the skills.** Upload the two skills under Customize, or package them as a plugin. Plugins use the same layout as Claude Code plugins.
-- **Unconfirmed: git and hooks.** Docs do not say whether Cowork can run git or push. Docs also do not say whether a plugin's SessionStart output reaches Cowork. Test both before relying on them.
+```
+cowork/plugin/                  # plugin with Cowork versions of both skills
+cowork/project-instructions.md  # stands in for the SessionStart hook
+cowork/build.py                 # rebuilds the zips in cowork/dist/
+```
+
+The Cowork skills differ from the Claude Code ones in three ways:
+
+- **No fixed path.** Cowork runs tasks in a sandbox where attached folders may have a different path than on your Mac. The skills look for the attached folder that contains `INDEX.md` instead.
+- **No push.** Cowork has no access to your GitHub sign-in. Capture commits if git works there and otherwise only writes files. The next Claude Code capture commits and pushes everything, since it adds all changes.
+- **Project instructions replace the hook.** Docs do not say whether a plugin's SessionStart hook output reaches Cowork. Project instructions are documented and do the same job.
+
+Run `python3 cowork/build.py` after editing anything in `cowork/plugin/`. Then re-upload the zip in Cowork.
 
 **claude.ai chat has two partial options.**
 

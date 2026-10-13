@@ -60,7 +60,47 @@ Set up a second brain for me from https://github.com/SequoiaLane/second-brain-te
 
 **It works in Claude Code on the computer where you set it up.** That includes the desktop app's Code tab and the terminal, in any folder.
 
-**It does not work in regular Claude chat, Cowork, or cloud sessions yet.** Those cannot reach the notes on your computer. See [how it works](docs/how-it-works.md) for workarounds.
+**Cowork needs a few extra steps.** See [Use it in Cowork](#use-it-in-cowork) below.
+
+**It does not work in regular Claude chat or cloud sessions.** Those cannot reach the notes on your computer. See [how it works](docs/how-it-works.md) for workarounds.
+
+## Use it in Cowork
+
+**Cowork keeps its own settings, separate from Claude Code.** The Claude Code setup does not carry over. These steps give Cowork the same two skills and point it at the same notes folder.
+
+**Do the Claude Code setup first.** It creates the `second-brain` folder these steps use.
+
+**1. Upload the skills.** In the Claude desktop app, open **Customize**, then **Plugins**, then **Upload plugin**. Choose this file from your brain folder:
+
+```
+second-brain/cowork/dist/second-brain-plugin.zip
+```
+
+If you don't see **Upload plugin**, open **Customize**, then **Skills**, and upload these two files one at a time instead:
+
+```
+second-brain/cowork/dist/capture-skill.zip
+second-brain/cowork/dist/recall-skill.zip
+```
+
+**2. Create a Cowork project and attach the folder.** Make a new project, or open one you already use. Add your `second-brain` folder to it. Allow editing, not read-only, so Claude can save notes.
+
+**3. Paste the project instructions.** Open the project's instructions and paste the text from this file:
+
+```
+second-brain/cowork/project-instructions.md
+```
+
+This does the same job as the start-of-session note in Claude Code. It tells Claude the notes exist and when to read them.
+
+**4. Try it.** Start a task in the project and ask "what topics do I have open?". Claude should list your notes.
+
+**Good to know:**
+
+- **Only tasks inside that project see the brain.** Tasks in other projects don't have the folder attached.
+- **Notes are shared with Claude Code.** Both use the same folder, so a topic captured in Cowork can be continued in Claude Code, and the other way around.
+- **Backups happen from Claude Code.** Cowork saves the note files but does not push to GitHub. The next capture in Claude Code backs up both.
+- **Say "capture this" instead of typing `/capture`.** Uploaded plugin skills may show under a longer name, such as `second-brain:capture`. Plain words work either way.
 
 ## Common questions
 
