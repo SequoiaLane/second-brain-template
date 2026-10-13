@@ -121,6 +121,7 @@ Tell the user, in plain words:
 - **Saving a topic:** say "capture this" or type `/capture` when they reach a stopping point.
 - **Coming back:** start a new session and mention the topic. Claude finds the notes on its own.
 - **Seeing open topics:** type `/recall`.
+- **Using Cowork too?** The README's "Use it in Cowork" section has four extra steps.
 - **Optional:** the folder opens as a vault in Obsidian, a free notes app, for browsing notes.
 
 Then stop. Do not capture this setup conversation.
